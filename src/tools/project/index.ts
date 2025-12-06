@@ -858,7 +858,7 @@ export function registerProjectTools(server: XcodeServer) {
         // Build the AppleScript content
         let scriptContent = `
           tell application "Xcode"
-            open "${server.activeProject.path}"
+            open POSIX file "${server.activeProject.path}"
             set mainWindow to window 1
 
             -- Wait for the project to load
